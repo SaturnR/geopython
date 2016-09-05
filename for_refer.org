@@ -3,10 +3,19 @@
 ** წიგნები
 https://www.gitbook.com/book/swaroopch/byte-of-python/details
 http://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html
+http://docs.python-guide.org/en/latest/intro/learning/
 
 * ტუტორიალები
+http://docs.python-guide.org/en/latest/intro/learning/
 
-** ინგლისური
+** რუსული
 1. asldkjasf
 2. alsjkdfd
  
+
+** ქართული
+https://lh4ckg.github.io/
+https://github.com/Lh4cKg
+
+
+
