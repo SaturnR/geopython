@@ -1,0 +1,12 @@
+* ინგლისური 
+
+** წიგნები
+https://www.gitbook.com/book/swaroopch/byte-of-python/details
+http://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html
+
+* ტუტორიალები
+
+** ინგლისური
+1. asldkjasf
+2. alsjkdfd
+ 
