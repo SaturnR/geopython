@@ -19,3 +19,6 @@ http://docs.python-guide.org/en/latest/intro/learning/
 
 
 
+* სილაბუსი
+  1. Python bytecode (Cython)
+  2. 
