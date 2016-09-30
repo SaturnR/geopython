@@ -79,8 +79,8 @@ dis.dis(tst.loop)
 #+END_SRC
 დამატებითი რესურსები
 
-https://www.youtube.com/watch?v=GNPKBICTF2w
-http://stackoverflow.com/questions/11241523/why-does-python-code-run-faster-in-a-function
-https://tech.blog.aknin.name/category/my-projects/pythons-innards/
-https://www.youtube.com/watch?v=HVUTjQzESeo
+1. https://www.youtube.com/watch?v=GNPKBICTF2w
+2. http://stackoverflow.com/questions/11241523/why-does-python-code-run-faster-in-a-function
+3. https://tech.blog.aknin.name/category/my-projects/pythons-innards/
+4. https://www.youtube.com/watch?v=HVUTjQzESeo
 
