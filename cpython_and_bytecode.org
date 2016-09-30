@@ -76,8 +76,7 @@ dis.dis(tst.loop)
         >>   23 LOAD_CONST               0 (None)
              26 RETURN_VALUE
 
-#+EDN_SRC
-
+#+END_SRC
 დამატებითი რესურსები
 
 https://www.youtube.com/watch?v=GNPKBICTF2w
