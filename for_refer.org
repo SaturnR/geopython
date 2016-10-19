@@ -4,7 +4,7 @@
 1. https://www.gitbook.com/book/swaroopch/byte-of-python/details
 2. http://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html
 3. http://docs.python-guide.org/en/latest/intro/learning/
-
+   
 * ტუტორიალები
 http://docs.python-guide.org/en/latest/intro/learning/
 
@@ -19,6 +19,7 @@ http://docs.python-guide.org/en/latest/intro/learning/
 
 
 
-* სილაბუსი
+* ------------
   1. Python bytecode (Cython)
-  2. 
+  2. Decorators
+  3. 
