@@ -1,0 +1,94 @@
+# this is getting started django tutorial
+
+* ინსტალაცია
+
+** სისტემური ინსტალაცია 
+pip install django #  დააინსტალირებს უახლესს მიმდინარე ვერსიას
+
+** ინსტალაცია ვირტუალურ გარემოში
+apt-get install virtualenv
+activate virtualenv without system packadges 
+install with pip
+pip install django # it will install latest django packadge 
+
+* პირველი ვებსაიტი
+
+** ვებსერვერის გაშვება
+django-admin startproject myproject
+
+** ახალი აპლიკაციის დამატება
+
+ჯანგოზე მუშაობის დროს, საიტისთვის ნებიესმიერი ახალი შესაძლებლობის დამატება, ასოცირდება აპლიცაციის შექმასთან.
+ასეთი მიდგომით, ჯანგო ქომუნითი ცდილობს ნებიემიერი პროცესის უნიფიცირებას. 
+ვთქვად გვინდა შევქმნათ ახალი გვერდი გარკვეული ფუნქციონალით. ამისთვის ვქმნით ახალ ამპლიკაციას შემდეგნაირად:
+შევდივართ პროექტის ფოლდერში და უშვებთ manage.py პროგრამას შემდეგი არგუმენტებით
+
+python3 manage.py startapp webapp
+
+აღნიშნული მოქმედებით შეიქმნება ახალი webapp დირექტორია, რომელიც წარმოადგენს ჩვენს აპლიკაციას. შემდგომ აღნიშული
+აპლიკაცია შეგვიძლია მივაბათ ნებისმიერ ჯანგო პროექტს.
+
+გავაკეთოდ მარტივი ვებგვერდი webapp აპლიკაციით. ამისთვის შევიდეთ webapp ფოლდერში, გავხსნათ views.py ფაილი და
+დავწეროთ შემდეგი:
+ 
+#+BEGIN_SRC python
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse('<h1>გაუმარჯოს, გაუმარჯოს, დედამიწას გაუმარჯოს!</h1>')
+
+#+END_SRC
+
+ამავე webapp ფოლდეში შევქმნათ urls.py ფაილი და ჩავწეროთ შემდეგი:
+
+#+BEGIN_SRC python
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.index, name = 'index'),
+]
+
+#+END_SRC
+
+სულ ეს არის საჭირო იმისთვის, რომ შევქმნათ ვებ გვერდი და გამოვიტანოთ რაიმე ტექსტი. ამით აპლიკაციის წერა
+დავასრულეთ. იმისთვის რომ სერვერმა დაინახოს ჩვენი აპლიკაცია, საჭიროა ის დავამატოთ, მთავარი პროექტის შიგნით
+setting.py  ფაილში როგორც ახალი აპლიკაცია შემდეგნაირად:
+
+#+BEGIN_SRC python
+# Application definition
+
+INSTALLED_APPS = [
+    'webapp',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+#+END_SRC
+
+webapp ჩვენი დაწერილი აპლიკაციაა. ასევე მთავარი პროექტის ფოლდეში მოთავსებულ urls.py ფაილში, დავმატოთ 
+ჩვენი ახალი გვერდის მისამართი და მიუთითოდ ის include urls.py ფაილს, რომელიც ჩვენს მიერ დაწერილი 
+აპლიკაციის ფოლდერშია მოთავსებული.
+
+#+BEGIN_SRC python
+
+from django.conf.urls import url, include
+from django.contrib import admin
+
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^mypage/', include('webapp.urls')),
+]
+
+#+END_SRC
+
+
+სულ ეს არის, გაუშვათ ვებსერვერი და ვნახოთ ახალი გვერდი მისამრთზე:
+
+127.0.0.1:8000/mypage
