@@ -16,7 +16,7 @@ http://docs.python-guide.org/en/latest/intro/learning/
 ** ქართული
 1. https://lh4ckg.github.io/
 2. https://github.com/Lh4cKg
-
+3. http://pythoncase.blogspot.com/
 
 
 * ------------
