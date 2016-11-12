@@ -6,10 +6,14 @@
 pip install django #  დააინსტალირებს უახლესს მიმდინარე ვერსიას
 
 ** ინსტალაცია ვირტუალურ გარემოში
+#+BEGIN_SRC bash
 apt-get install virtualenv
-activate virtualenv without system packadges 
-install with pip
+#activate virtualenv without system packadges 
+virtualenv -p python3.5 vint
+source /vint/bin/activate
+#install with pip
 pip install django # it will install latest django packadge 
+#+END_SRC
 
 * პირველი ვებსაიტი
 
