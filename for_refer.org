@@ -23,3 +23,7 @@ http://docs.python-guide.org/en/latest/intro/learning/
   1. Python bytecode (Cython)
   2. Decorators
   3. 
+
+
+** web sites
+1. http://www.fullstackpython.com/
