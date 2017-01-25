@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>unicode_encoding_string</title>
+<!-- 2016-12-01 Thu 16:26 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="saturn" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">unicode_encoding_string</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. კოდირების მეთოდები და სტრინგზე მოქმედებები</a>
+<ul>
+<li><a href="#sec-1-1">1.1. უნიკოდი</a></li>
+<li><a href="#sec-1-2">1.2. utf-8 კოდირება და კოდირების მეთოდები</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1. string slicing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> კოდირების მეთოდები და სტრინგზე მოქმედებები</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> უნიკოდი</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+60 - წლებიდან ამერიკაში არსებობდა <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> (American Standard Code for Information Interchange) სიმბოლოების სტანდარტიზაციის მეთოდი, რომელსაც იყენებდნენ ტელეტაიპით 
+ტექსტის გადაცემის დროს. ASCII-ში მოცემულია ინგლისური ანბანის დიდი და პატარა ასოები, ასევე 0-დან 9-მდე რიცხვები და დამატებითი სიმბოლოები როგორიცაა . , : ; []{} და ა.შ.
+ისევე როგორც ამერიკაში, სხვა ქვეყნებშიც დაიწყეს ინფორმაციის მიმოცვლის საკუთარი სტანდარტების დამუშავება. მაგალითად იაპონიაში არსებობდა რამოდენიმე სტანდარტი და თვითონ 
+იაპონურ კომპანიებს შორის ტექსტის ერთმანეთში დაგადზავნისას იქმნებოდა პრობლემები, სხვა რომ არღარაფერი ვთქვათ სხვა ქვეყანაში ტექსტის გაგზავნაზე. ინტერნეტის შექმნის 
+მომენტში, 80 წლების ბოლოს გაჩნდა საერთაშორისო სტანდარტის შექმნის მოთხოვნა. ამის გამო 1991  წელს შიექმნა Unicode კონსორციუმი. რომლის მიზანი იყო შეექმნა ტექსტური 
+ინფორმაციის კოდირების საერთაშორისო სტანდარტი. დღეისთვის უნიკოდი შეიცავს 128000 სიმბოლოს, თითქმის ნებისმიერ სიმბოლოს რაც კაცობრიობის ისტორისს მანძილზე არსებობდა და 
+ცნობილია. 
+სულ რამოდენიმე სიტყვით, უნიკოდი ეს არის მსოფლიოში არსებული ყველა ხელნაწერი სიმბოლოს (და არა მარტო) უნიფიცირების მეთოდი.
+უნიკოდში ყოველ ხელნაწერ ელემენტს მინიჭებული აქვს გარკვეული რიგითი ნომერი. მაგალითად არაბული რიხვითი სიმბოლოები და ინგლისური 
+ანბანის პირველი ასოები მოთავსებული უნიკოდის 128 მდე რიგში, ქართული 4304-დან 4337-მდე შუალედში, ჩინური ძირითადი 19968-დან 40959-მდე შუალედში, და ა.შ
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">მაგ:
+0 - 48
+1 - 49
+2 - 50
+. . .
+9 - 57
+. . .
+A - 65
+B - 66 
+.
+Z - 90
+.
+a - 97
+b - 98
+.
+z - 122
+. . .
+ა - 4304
+ბ - 4305
+. . .
+ჰ - 4336
+. . .
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> utf-8 კოდირება და კოდირების მეთოდები</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+ელექტრონულად ინფორმაციის გადაცემა/დამახსოვრება უნიკოდის შესაბამისი რიცხვების სახით ძალზედ არაეფექტურია.
+წარმოვიდგინოთ რომ გვინდა გადავცეთ ქართული ანბანის სიმბოლოები ა,ბ,გ,დ, რის შესაბამისი ორობითი ექვივალენტი იქნება 
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">4302 - 0b1000011001110
+4303 - 0b1000011001111
+4304 - 0b1000011010000
+4305 - 0b1000011010001
+</pre>
+</div>
+
+<p>
+ბინარული კოდიდან კარგად ჩანს რომ ზედა მინიმუმ 7 ბიტი გამოუყენებელია და ტყუილად გადავცემთ, თან ვიკავებთ კომუნიკაციის არხს.
+სწორედ იმისთვის, რომ არ მოდეს ზედმეტი ინფორმაციის გადაცემა, გამოიყენება კოდირების სისტემები როგორიცაა utf-8, utf-16 cp-1252
+და ა.შ. 
+კოდირების სისტემებიდან ყველაზე მეტად გავრცელებულია და უკვე ფაქტიურად  საყოველთაო სტანდარტია UTF-8 კოდირება. 
+გავიხოლოთ თუ რას წარმოადგენს utf-8:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">ბაიტების</th>
+<th scope="col" class="right">საინფორმაციო</th>
+<th scope="col" class="right">&#xa0;</th>
+<th scope="col" class="right">&#xa0;</th>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+
+<tr>
+<th scope="col" class="right">რაოდენობა</th>
+<th scope="col" class="right">ბიტების რაოდენობა</th>
+<th scope="col" class="right">I ბაიტი</th>
+<th scope="col" class="right">II ბაიტი</th>
+<th scope="col" class="left">II ბაიტი</th>
+<th scope="col" class="left">IV ბაიტი</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">1</td>
+<td class="right">7</td>
+<td class="right">0xxxxxxx</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">2</td>
+<td class="right">11</td>
+<td class="right">110xxxxx</td>
+<td class="right">10xxxxxx</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">3</td>
+<td class="right">16</td>
+<td class="right">1110xxxx</td>
+<td class="right">10xxxxxx</td>
+<td class="left">10xxxxxx</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">4</td>
+<td class="right">21</td>
+<td class="right">11110xxx</td>
+<td class="right">10xxxxxx</td>
+<td class="left">10xxxxxx</td>
+<td class="left">10xxxxxx</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+ცხრილიდან კრაგად ჩანს კოდირების პრინციპი. იმ შემთხვევაში თუ გვინდა გადავცეთ მხოლოდ 0 დან 127-მდე რიცხვი, საკმარისია
+მხოლოდ პირდაპირ რიცხვის გადაცემა, დეკოდირებისას თუ ბაიტიდ უმაღლესი ბიტი 0-ის ტოლია, მაშინ მოცემული იფორმაციის ნაკადი მხოლოდ ერთ
+ბაიტიანია და რიცხვიც ქვედა ბიტების შესაბამისია. თუ გვინდა გადავცეთ მაქსიმუმ 11 ბიტი მაშინ პირველი სამ ბიტში 110 აღნიშნავს, რომ
+სტრიმი ორ ბაიტიანია და მიღებული ბაიტის გაგრძელებაა კიდევ ერთი ბაიტი. ყოველი შემდგომი დამატებითი ბაიტი შეგვიძლია ამივიცნოთ პირველი ორი
+მაღალი თანრიგის რიცხვით, რომელიც უნდა უდრიდეს 10-ს. შესაბამისად 3 ბაიტის გადაცემის შემთხვევაში პირველი ბაიტი დაიწყება 1110-ით.
+ხოლო შემდგომი ბაიტები იგივე პრინციპით გადაიცემა, როგორც წინა შემთხვევაში.
+</p>
+
+<p>
+მოვახდინოთ ინგლისური სიტყვა "hello"-ს  და ქართული სიტყვა "გამარჯობა"-ს კოდირება ""utf-8"-ში და ვნახოთ რა რაოდენობის ბაიტებად
+გარდაიქმნება თითოეული მათგანი.  
+</p>
+
+
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; e = 'hello'
+&gt;&gt;&gt; c = e.encode('utf-8')
+&gt;&gt;&gt; len(c)
+5
+&gt;&gt;&gt;
+</pre>
+</div>
+
+<p>
+როგორც გამოჩნდა, ინგლისური სიტყვა დაიკავებს მხოლოდ 5 ბაიტს
+</p>
+
+<p>
+მინიმუმი რიცხვი რაც ქართულ ასოებს შეესაბამება უნიკოდის მიხედვით არის 4304, ვთქვად ავდექით და შევინახეთ პირდაპირ მეხსიერებაში,
+მაშინ თითოეულ ასოს დასჭირდება 4304/256 დაახლოვებით 17 ბაიტი ადგილი, სულ 17 * 9(ასოების რაოდენობა "გამარჯობა"-ში)
+გამოვიდა 153 ბაიტი.
+</p>
+
+<p>
+მოვახდინოთ სიტყვა "გამარჯობა"-ის კოდირება 'utf-8' მეთოდით  ბაიტკოდში და ვნახოთ რამდენი ბაიტი გამოვა.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; g = 'გამარჯობა'
+&gt;&gt;&gt; c = g.encode('utf-8')
+&gt;&gt;&gt; len(c)
+27
+&gt;&gt;&gt;
+</pre>
+</div>
+
+<p>
+გამოვიდა სულ 27 ბაიტი. აქედან უკვე გასაგებია ' utf-8'-ით კოდირებით რამდენათ ხდება რესურსების ოპტიმიზირება, შენახვის თუ გადაცემის დღოს 
+</p>
+
+<ol class="org-ol">
+<li>ბაიტსტრინგი 
+</li>
+</ol>
+<p>
+როგორც ვიცით, პითონში სტრინგი წარმოდგენილია უნიკოდის სახით (იგულისხმება python3, python2 -ში ჩვეულებრივ სტრინგი წარმოდგენილია 
+ბაიტსტრინგის სახით). გარდა სტრინგისა არსებობს დამატებით სტრინგის მსგავსი ტიპი ბაიტსტრინგი. ბაიტსტრინგის თითოეული წევრის მაქსიმალური სიდიდე 255 ბიტია.
+მაგალითად b'hello, world' მსგავსი ჩანაწერი წარმოადგენს ბაიტსტრინგს.  
+აუცილებელია დავიმახსოვროთ რომ ბაიტსტრინგი სტრინგი არ არის, ამიტომ ჩანაწერი
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; bs = b'something'
+&gt;&gt;&gt; newb = bs+'just string'
+ყოველთვის აღძრავს შემდეგ ერორს
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: can't concat bytes to str
+</pre>
+</div>
+
+<p>
+სტრინგის ბაიტსტრინგთან შეერთება შესაძლებელია მხოლოდ, ბაიტსტრინგის სტრინგად ან სტრინგის ბაიტსტრინგად გარდაქმნის შემდეგ
+მაგალითად, ბაიტსტრინგის გარდაქმნა სტრინგად შესაძლებელია შემდეგნაირად:
+</p>
+
+<p>
+&gt;&gt;&gt; st = bs.decode('utf-8') 
+</p>
+
+<p>
+ბაიტსტრიგის სტრინგად გარდაქმნის შემდეგ, უპრობლემოდ შეგვიძლია კონკატენაცია (სტრინგების გაერთიანება)
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; st + ' just string' 
+'something just string'
+</pre>
+</div>
+<p>
+ხოლო სტრინგის გარდაქმნა ბაიტსტრინგად ხდება შემდეგნაირად
+</p>
+
+<p>
+&gt;&gt;&gt; st = 'some string'.encode('utf-8') 
+</p>
+
+
+<ol class="org-ol">
+<li>string and escape sequence
+</li>
+</ol>
+<p>
+სტრინგის გამოყენების დროს საჭიროა გვქონდეს წარმოდგენა ე.წ. "Escape sequence" მეთოდებზე.
+ქვემოთ მოცემულია "Escape sequence"-სების ჩამონათვალი.
+. \' &#x2014; single-quote     # დავბეჭდავთ ' ჩარაქტერს შედეგანირად print('\'')
+. \" &#x2014; double-quote     # დავბეჭდავთ " ჩარაქტერს შედეგანირად print('\"')
+. \\ &#x2014; backslash        # დავბეჭდავთ \ ჩარაქტერს შედეგანირად print('\\')
+. \a &#x2014; bell                  # ხმოვანი სიგნალის გამოძახება print('\a')
+. \b &#x2014; backspace        # წინმდგომი სიმბოლოს წაშლა print('hi\bello') დაბეჭდავს hello-ს
+. \f &#x2014; formfeed         # მოცემული მოქმედება, გარკვეული მანძილით დააშორებს სტრინგის ნაწილებს მაგ. print('hello,\tworld') დაბეჭდავს "hello,        world"-ს 
+. \n &#x2014; newline          # ახალ ხაზზე გადასვლა, მაგალითად print('\n\n\nHello')  სამჯერ გადავა ახალ ხაზზე და შემდეგ დაწერს Hello-ს 
+. \r &#x2014; carriage return  # გადაიტანს კურსორს ტერმინალის მარცხენა კიდეში. print('hello, \rworld') დაბეჭდავს "world,"-ს
+. \t &#x2014; tab                  # ტაბი
+. \v &#x2014; vertical tab     # გააკეთებს ვერტიკალურ ტაბს 
+</p>
+
+
+<ol class="org-ol">
+<li>სტრინგის ფორმატირება
+</li>
+</ol>
+<p>
+print ფუნქციის გამოყენებისას, ხშირად საჭიროა კონკრეტული ცვლადების ჩასმა შესაბამის ადგილას
+მაგალითად
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">saxeli = 'ჯონ' 
+gvari = 'დო'
+asaki = 25
+print('სახელი: '+ saxeli + ', გვარი: '+ gvari + ", ასაკი: "+ str(asaki))
+</pre>
+</div>
+
+<p>
+ერთი შეხედვითაც კარგად ჩანს რომ მსგავსი ჩანაწერი არც ისე მოხერხებულია, მოქმედება გაცილებით მოხერხებულად დაიწერება
+format ფუნქციით მაგალითად:
+</p>
+
+<p>
+print('სახელი: {}, გვარი: {}, ასაკი:{}'.format(saxeli, gvari, asaki))
+</p>
+
+<p>
+ასევე შესაძლებელია როგორც C პროგრამირების ენაში შემდეგნაირად დავწეროთ (არც ისე მოხერხებულია format ფუნქციასთან შედარებით)
+</p>
+
+<p>
+print('სახელი: %s, გვარი: %s, ასაკი: %s'%(saxeli, gvari, asaki))
+</p>
+
+<ol class="org-ol">
+<li>სტრინგის დაჭრა (slicing)
+</li>
+</ol>
+
+<p>
+პითონში სტრინგი წარმოადგენს უნიკოდის შესაბამისი ობიექტების კოლექციას. ისევე როგორც ნებისმიერ კოლექციას ასევე სტრინგის 
+ელემენტებსაც აქვს ინდექსი. ქვემოთ მოცემულ ცხრილზე ჩანს სტრინგის (კონკრეტულად 'Hello, world!'-ის) ინდექსაციის მექანიზმი.
+</p>
+
+<p>
+<b>ინდექსაცია პირდაპირი მიმართულებით</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">0</th>
+<th scope="col" class="right">1</th>
+<th scope="col" class="right">2</th>
+<th scope="col" class="right">3</th>
+<th scope="col" class="right">4</th>
+<th scope="col" class="right">5</th>
+<th scope="col" class="right">6</th>
+<th scope="col" class="right">7</th>
+<th scope="col" class="right">8</th>
+<th scope="col" class="right">9</th>
+<th scope="col" class="right">10</th>
+<th scope="col" class="right">11</th>
+<th scope="col" class="right">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">H</td>
+<td class="right">e</td>
+<td class="right">l</td>
+<td class="right">l</td>
+<td class="right">o</td>
+<td class="right">,</td>
+<td class="right">&#xa0;</td>
+<td class="right">w</td>
+<td class="right">o</td>
+<td class="right">r</td>
+<td class="right">l</td>
+<td class="right">d</td>
+<td class="right">!</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>ინდექსაცია უკუ მიმართულებით</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">-13</th>
+<th scope="col" class="right">-12</th>
+<th scope="col" class="right">-11</th>
+<th scope="col" class="right">-10</th>
+<th scope="col" class="right">-9</th>
+<th scope="col" class="right">-8</th>
+<th scope="col" class="right">-7</th>
+<th scope="col" class="right">-6</th>
+<th scope="col" class="right">-5</th>
+<th scope="col" class="right">-4</th>
+<th scope="col" class="right">-3</th>
+<th scope="col" class="right">-2</th>
+<th scope="col" class="right">-1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">H</td>
+<td class="right">e</td>
+<td class="right">l</td>
+<td class="right">l</td>
+<td class="right">o</td>
+<td class="right">,</td>
+<td class="right">&#xa0;</td>
+<td class="right">w</td>
+<td class="right">o</td>
+<td class="right">r</td>
+<td class="right">l</td>
+<td class="right">d</td>
+<td class="right">!</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+პითონში ინდექსაცია იწყება ყოველთვის 0 ინდექსიდან. მაგალითად თუ გვინდა ავიღოთ პირველი ელემენტი სტრინგიდან:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt;s = 'Hello, world!'
+&gt;&gt;&gt;print(s[0])
+H
+&gt;&gt;&gt;print(s[-1])
+!
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> string slicing</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+ინდექსების მეშვობოთ, შეგვიძლია ავიღოთ რაიმე ადგილი სტრინგიდან მაგალითად:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt;s = 'Hello, world!'
+&gt;&gt;&gt;print(s[0:6])
+Hello
+თუ გვიდა, რომ დასაწყისიდანვე ამოიღოს
+&gt;&gt;&gt;s = 'Hello, world!'
+&gt;&gt;&gt;print(s[:6])
+Hello
+ან პირიქით, მაგ. -6 ინდექსიდან ბოლომდე
+&gt;&gt;&gt;s = 'Hello, world!'
+&gt;&gt;&gt;print(s[-6:])
+world!
+</pre>
+</div>
+
+<p>
+ასევე შესაძლებელია ბიჯის მითითება და იმ თანმიმდევრობით სტრინგის ამოღება მაგ:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; s = 'Hello, world!'
+&gt;&gt;&gt; s[0:-1:2]
+'Hlo ol'
+</pre>
+</div>
+
+<p>
+სადაც 0:-1 ნიშნავს, რომ სტრინგი აღებულია 0 დან -1-მდე (ანუ ბოლოს წინა რიცხვამდე), ხოლო 2 ბიჯია
+</p>
+
+<p>
+მსგავსი პრინციპით შესაძლებელია სტრინგის რევერსიაც მაგ:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; s = 'Hello, world!'
+&gt;&gt;&gt; 
+&gt;&gt;&gt; s[::-1]
+'!dlrow ,olleH'
+&gt;&gt;&gt;
+</pre>
+</div>
+
+
+<ol class="org-ol">
+<li>სტრინგის მეთოდები
+</li>
+</ol>
+<p>
+სტრინგს როგორც ტიპს აქვს სხვადასხვა მეთოდები, განვიხილოთ რამოდენიმე მათგანი
+</p>
+
+<p>
+split მეთოდს შეუძლია დაანაწევროს სტრინგი რომელიმე ელემენტის მიხედვით მაგ:
+</p>
+
+<p>
+დაანაწევრება გამოტოვებული ადგილის მიხედვით
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt;s = 'Hello, world!'
+&gt;&gt;&gt;s.split()
+['Hello,', 'world!']
+
+#დაანაწევრება 'o' სტრინგის მიხედვით
+&gt;&gt;&gt;s.split('o')
+['Hell', ', w', 'rld!']
+</pre>
+</div>
+
+<p>
+lower და upper მეთოდები სტრინგის წევრებს გადააქცევენ პატარა და დიდ სიმბოლოებად მაგ:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; s = 'Hello, world!'
+&gt;&gt;&gt; s.lower()
+'hello, world!'
+&gt;&gt;&gt; s.upper()
+'HELLO, WORLD!'
+</pre>
+</div>
+
+<p>
+count დაითვლის თუ რამდენჯერ შეიცავს რომელიმე სტრინგს სტრინგი მაგ:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; s = 'Hello, world!'
+&gt;&gt;&gt; s.count('l')
+3
+&gt;&gt;&gt; s.count('wo')
+1
+&gt;&gt;&gt;
+</pre>
+</div>
+
+
+<p>
+find მეთოდი მოძებნის და დააბრუნებს პირველივე ნაპოვნი ელემენტის ინდექსს მაგ:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; s = 'Hello, world!'
+&gt;&gt;&gt; s.find('o')
+4
+&gt;&gt;&gt;
+</pre>
+</div>
+
+<p>
+join ფუნქცია გააერთიანებს სტრინგების კოლექციას ერთ სტრინგად მაგ:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; '+'.join(['1','2','3','4'])
+'1+2+3+4'
+</pre>
+</div>
+
+<p>
+strip ფუნქცია მოჭრის სტრინგის თავში და ბოლოში მითითებულ ელემენტებს მაგ:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">&gt;&gt;&gt; s = ' Hello, world!  '
+&gt;&gt;&gt; print(s)
+ Hello, world!  
+&gt;&gt;&gt; s.strip()
+'Hello, world!'
+&gt;&gt;&gt; 
+&gt;&gt;&gt; s = 'Hello, world!'
+&gt;&gt;&gt; s.strip('!')
+'Hello, world'
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: saturn</p>
+<p class="date">Created: 2016-12-01 Thu 16:26</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
